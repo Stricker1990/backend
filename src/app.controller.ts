@@ -17,7 +17,8 @@ export class AppController {
   }
 
   @Get('token')
-  getToken(@GetToken() token: string) {
+  getToken() {
+    const token = this.requestContextService.getToken();
     return 'token:' + token;
   }
 }
